@@ -3,21 +3,21 @@ terraform {
   required_providers {
     aws = "~> 2.33.0"
   }
-   backend "s3" {
-     profile = "spkane-training"
-     bucket = "spkane-training-tfstate"
-     key    = "classes/terraform-101.tfstate"
-     region = "us-east-1"
-     encrypt = true
-     kms_key_id = "arn:aws:kms:us-east-1:929892624845:key/b8c00916-26bd-4388-be96-afce8110cd98"
-     acl = "private"
-     dynamodb_table = "tfstate"
-   }
+  backend "s3" {
+    profile        = "terraform-practice"
+    bucket         = "terraform-ractice-tfstate"
+    key            = "classes/terraform-101.tfstate"
+    region         = "us-east-1"
+    encrypt        = true
+    kms_key_id     = "arn:aws:kms:us-east-1:AKIAZL74OL73ZSCSISXS:key/VIGQtYstC9BZ65Eg6bk+QkMcGap2Pct9bKQt/N8G"
+    acl            = "private"
+    dynamodb_table = "tfstate"
+  }
 }
 
 provider "aws" {
-  profile  = "spkane-training"
-  region   = "us-east-1"
+  profile = "terraform-practice"
+  region  = "us-east-1"
 }
 
 provider "ns1" {
